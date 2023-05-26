@@ -20,8 +20,8 @@ public class LogInPage extends BasePage {
     }
 
     public void logIn() {
-        driver.findElement(USER_NAME).sendKeys("standard_user");
-        driver.findElement(PASSWORD).sendKeys("secret_sauce");
+        driver.findElement(USER_NAME).sendKeys(System.getProperty("username"));
+        driver.findElement(PASSWORD).sendKeys(System.getProperty("password"));
         driver.findElement(LOGIN_BUTTON).click();
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
     }
